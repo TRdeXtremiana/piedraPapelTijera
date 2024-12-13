@@ -1,10 +1,30 @@
-const rules = {
+const rulesClassic = {
+	piedra: ["tijera"],
+	papel: ["piedra"],
+	tijera: ["papel"]
+};
+
+const rulesBigBang = {
 	piedra: ["tijera", "lagarto"],
 	papel: ["piedra", "spock"],
 	tijera: ["papel", "lagarto"],
 	lagarto: ["papel", "spock"],
 	spock: ["piedra", "tijera"]
 };
+
+let currentRules = rulesClassic;
+
+// Cambia las reglas y las opciones de elección según el modo
+function updateGameMode() {
+	const mode = document.getElementById('mode-select').value;
+	if (mode === "bigbang") {
+		currentRules = rulesBigBang;
+		document.querySelectorAll('.lagarto, .spock').forEach(button => button.style.display = 'inline-block');
+	} else {
+		currentRules = rulesClassic;
+		document.querySelectorAll('.lagarto, .spock').forEach(button => button.style.display = 'none');
+	}
+}
 
 // Función principal de juego
 function play(userChoice) {
@@ -16,7 +36,7 @@ function play(userChoice) {
 
 // Obtiene la elección aleatoria de la IA
 function getAIChoice() {
-	const choices = Object.keys(rules);
+	const choices = Object.keys(currentRules);
 	return choices[Math.floor(Math.random() * choices.length)];
 }
 
@@ -30,7 +50,7 @@ function displayChoices(userChoice, aiChoice) {
 function determineWinner(userChoice, aiChoice) {
 	if (userChoice === aiChoice) {
 		return 'tie'; // Empate
-	} else if (rules[userChoice].includes(aiChoice)) {
+	} else if (currentRules[userChoice].includes(aiChoice)) {
 		return 'win'; // Victoria
 	} else {
 		return 'lose'; // Derrota
@@ -51,3 +71,6 @@ function displayResult(result) {
 		resultText.classList.add('loser');
 	}
 }
+
+// Inicializar el modo de juego por defecto
+updateGameMode();

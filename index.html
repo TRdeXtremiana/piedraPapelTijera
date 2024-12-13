@@ -11,6 +11,14 @@
 <body>
 	<h1>Piedra, Papel, Tijera, Lagarto, Spock</h1>
 
+	<div class="game-mode">
+		<label for="mode-select">Modo de juego:</label>
+		<select id="mode-select" onchange="updateGameMode()">
+			<option value="classic">Clásico</option>
+			<option value="bigbang">Big Bang</option>
+		</select>
+	</div>
+
 	<div class="choices">
 		<button class="piedra" onclick="play('piedra')">Piedra</button>
 		<button class="papel" onclick="play('papel')">Papel</button>

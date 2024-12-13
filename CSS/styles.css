@@ -20,6 +20,27 @@ h1 {
 	padding: 10px 20px;
 }
 
+.game-mode {
+	margin-bottom: 20px;
+}
+
+select {
+	padding: 10px;
+	font-size: 1.2rem;
+	border-radius: 5px;
+	border: 2px solid #ff4081;
+	background-color: #fff;
+	color: #3a3a3a;
+	cursor: pointer;
+	transition: transform 0.2s, opacity 0.2s;
+	opacity: 0.8;
+}
+
+select:hover {
+	opacity: 1;
+	transform: scale(1.05);
+}
+
 .choices {
 	display: flex;
 	justify-content: center;
@@ -67,7 +88,7 @@ button:hover {
 	background-color: #9c27b0;
 }
 
-result {
+.result {
 	margin-top: 30px;
 }
 
