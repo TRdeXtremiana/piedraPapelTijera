@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Piedra, Papel, Tijera, Lagarto, Spock</title>
+	<link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+	<h1>Piedra, Papel, Tijera, Lagarto, Spock</h1>
+
+	<div class="choices">
+		<button class="piedra" onclick="play('piedra')">Piedra</button>
+		<button class="papel" onclick="play('papel')">Papel</button>
+		<button class="tijera" onclick="play('tijera')">Tijera</button>
+		<button class="lagarto" onclick="play('lagarto')">Lagarto</button>
+		<button class="spock" onclick="play('spock')">Spock</button>
+	</div>
+
+	<div class="result">
+		<p id="user-choice">Tu elección: </p>
+		<p id="ai-choice">Elección de la IA: </p>
+		<p id="winner"></p>
+	</div>
+	<script src="JS/script.js"></script>
+</body>
+
+</html>
