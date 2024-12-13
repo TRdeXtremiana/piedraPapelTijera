@@ -17,11 +17,15 @@ let currentRules = rulesClassic;
 // Cambia las reglas y las opciones de elección según el modo
 function updateGameMode() {
 	const mode = document.getElementById('mode-select').value;
+	const title = document.querySelector('h1');
+
 	if (mode === "bigbang") {
 		currentRules = rulesBigBang;
+		title.textContent = "Piedra, Papel, Tijera, Lagarto, Spock"; // Cambia el título
 		document.querySelectorAll('.lagarto, .spock').forEach(button => button.style.display = 'inline-block');
 	} else {
 		currentRules = rulesClassic;
+		title.textContent = "Piedra, Papel, Tijera"; // Cambia el título
 		document.querySelectorAll('.lagarto, .spock').forEach(button => button.style.display = 'none');
 	}
 }
