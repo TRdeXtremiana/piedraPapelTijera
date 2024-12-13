@@ -9,6 +9,8 @@ body {
 	flex-direction: column;
 	text-align: center;
 	color: white;
+	padding: 10px;
+	/* Agregado padding para evitar que los elementos toquen los bordes */
 }
 
 h1 {
@@ -46,6 +48,8 @@ select:hover {
 	justify-content: center;
 	gap: 10px;
 	margin-bottom: 20px;
+	flex-wrap: wrap;
+	/* Permite que los botones se ajusten en pantallas pequeñas */
 }
 
 button {
@@ -130,4 +134,66 @@ button:hover {
 	background-color: #d3a31f;
 	color: white;
 	border: 3px solid black;
+}
+
+/* Medios de pantalla (responsive design) */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 2rem;
+		/* Reduce el tamaño del título en pantallas más pequeñas */
+	}
+
+	.choices {
+		gap: 15px;
+	}
+
+	button {
+		padding: 15px 30px;
+		font-size: 1.2rem;
+	}
+
+	select {
+		font-size: 1rem;
+		padding: 8px;
+	}
+
+	#user-choice,
+	#ai-choice {
+		font-size: 1.2rem;
+		/* Ajuste del tamaño del texto */
+	}
+
+	#winner {
+		font-size: 1.5rem;
+		/* Ajuste del tamaño del texto */
+	}
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.5rem;
+		/* Más pequeño en pantallas muy pequeñas */
+	}
+
+	.choices {
+		flex-direction: column;
+		/* Los botones se apilan verticalmente */
+	}
+
+	button {
+		padding: 10px 20px;
+		font-size: 1rem;
+		margin-bottom: 10px;
+	}
+
+	#user-choice,
+	#ai-choice {
+		font-size: 1rem;
+		/* Ajuste del tamaño del texto */
+	}
+
+	#winner {
+		font-size: 1.2rem;
+		/* Ajuste del tamaño del texto */
+	}
 }
